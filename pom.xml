@@ -448,6 +448,18 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <!-- 支持tomcat7 构建war 支持jenkins热部署 -->
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <configuration>
+                    <url>http://localhost:8080/housekeep</url>
+                    <path>/</path>
+                    <server>tomcat</server>
+                    <username>admin</username>
+                    <password>123456</password>
+                </configuration>
+            </plugin>
 
             <!-- war包生成插件 -->
             <!--<plugin>-->
