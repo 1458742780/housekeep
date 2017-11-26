@@ -446,6 +446,10 @@
                     <encoding>UTF-8</encoding>
                     <source>1.8</source>
                     <target>1.8</target>
+                    <!-- 添加lib jar -->
+                    <compilerArguments>
+                        <extdirs>src\main\webapp\WEB-INF\lib</extdirs>
+                    </compilerArguments>
                 </configuration>
             </plugin>
             <!-- 支持tomcat7 构建war 支持jenkins热部署 -->
