@@ -212,12 +212,13 @@ public class JzLoginController extends AppBaseController {
                 json = ErrorCode(Code.PHONEREPEAT);
             } else {
 //            TODO 发送验证码
-                String captcher = StringUtil.buildRandom(6) + "";
-                AliyunSms.sendSms(phone, captcher);
-
-                RedisUtil.set(phone + "1", captcher);
-                System.out.println("===============" + RedisUtil.get(phone + "1") + "");
-                json = objectToJson(captcher);
+                for (int i=0;i<10;i++){
+                    String captcher = StringUtil.buildRandom(6) + "";
+                    AliyunSms.sendSms(phone, captcher);
+                    RedisUtil.set(phone + "1", captcher);
+                    System.out.println("===============" + RedisUtil.get(phone + "1") + "");
+                    json = objectToJson(captcher);
+                }
 
 
             }

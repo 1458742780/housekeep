@@ -12,7 +12,9 @@ import com.aliyun.mns.model.TopicMessage;
 
 public class AliyunSms {
     public static void main(String[] args) {
-        sendSms("15927393643", "123456");
+        for (int i=0;i<10;i++) {
+            sendSms("15927393643", "123456");
+        }
     }
 
     public static void sendSms(String phone, String captcher) {

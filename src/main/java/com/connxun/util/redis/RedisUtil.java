@@ -30,6 +30,15 @@ public class RedisUtil {
     public static void set(final String key, Object value) {
         final byte[] vbytes = SerializeUtil.serialize(value);
         try{
+//            redisTemplate.execute(new RedisCallback<Object>() {
+//
+//                public Object doInRedis(RedisConnection connection) {
+//                    byte[] keybytes = redisTemplate.getStringSerializer().serialize(key);
+//                    connection.set(keybytes, vbytes);
+//                    return null;
+//                }
+//            }, true);
+
             redisTemplate.execute((RedisCallback<Object>) connection -> {
                 byte[] keybytes = redisTemplate.getStringSerializer().serialize(key);
                 connection.set(keybytes, vbytes);

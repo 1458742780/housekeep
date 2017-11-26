@@ -3,7 +3,9 @@ package com.connxun.app.service;
 /**
  * @Author anna
  * @Date 2017-10-31 15:57
- * @Description
+ * @Description dubbo测试服务
  */
-public class IDemoService {
+public interface IDemoService {
+
+    public String sayHello(String name);
 }
