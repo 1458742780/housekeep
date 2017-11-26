@@ -7,7 +7,6 @@
 *.iml
 out
 gen
-/target/
 *.class
 /out
 /checkouts
@@ -23,3 +22,7 @@ logs
 /tmp
 hotspot.log
 src/test/
+target/classes
+target/generated-*
+target/maven-*
+target/test-*
